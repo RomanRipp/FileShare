@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FileShare</string>
+    <string name="app_error">Error occured</string>
 </resources>
