@@ -25,11 +25,13 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
         @Override
         public void onSuccess() {
             Log.i(TAG, "Discover peers succeeded.");
+            mActivity.onPeersDiscovered(true);
         }
 
         @Override
         public void onFailure(int reason) {
             Log.e(TAG, "Failed to discover peers.");
+            mActivity.onPeersDiscovered(false);
         }
     }
 
@@ -46,6 +48,11 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
         this.mChannel = channel;
         this.mActivity = activity;
 
+        discoverPeers();
+    }
+
+    public void discoverPeers()
+    {
         mManager.discoverPeers(mChannel, new MyActionListener());
     }
 

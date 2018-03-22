@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">FileShare</string>
     <string name="app_error">Error occured</string>
+    <string name="app_error_discovery">Device discovery failed.</string>
 </resources>
